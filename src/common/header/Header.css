@@ -1,14 +1,14 @@
-.app-header{
+.app-header {
     background-color: black;
     height: 36px;
     padding: 8px 32px 8px 16px;
 }
 
-.login-button{
+.login-button {
     float: right;
 }
 
-.tab{
+.tabs {
     margin-bottom: 20px;
 }
 

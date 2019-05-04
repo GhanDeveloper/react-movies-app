@@ -23,7 +23,7 @@ const customStyles = {
 
 const TabContainer = function (props) {
     return (
-        <Typography component="div" style={{ padding : 0 }}>
+        <Typography component="div" style={{ padding : 0, textAlign:"center" }}>
         {props.children}
         </Typography>
     );
@@ -60,25 +60,28 @@ class Header extends Component {
         return (
             <div>
                 <header className='app-header'>
-                    <img src={logo} className="app-logo" alt="logo" />
+                    <img src={logo} className="app-logo" alt="Movie App logo" />
                     <div className="login-button">
                         <Button variant="contained" color="default" onClick={this.openModalHandler}>Login</Button>
                     </div>
                 </header>
                 <Modal ariaHideApp={false} isOpen={this.state.modalIsOpen} contentLabel="Login" onRequestClose={this.closeModalHandler} style={customStyles}>
-                    <Tabs className="tab" value={this.state.value} onChange={this.tabChangesHandler}>
-                        <Tab label="Login" />
-                        <Tab label="Register" />
+                    <Tabs className="tabs" value={this.state.value} onChange={this.tabChangesHandler}>
+                        <Tab label="Login"/>
+                        <Tab label="Register"/>
                     </Tabs>
-                    <TabContainer>
+                    <TabContainer >
                             <FormControl required>
-                                <InputLabel htmlFor="username" >Username</InputLabel>
+                                <InputLabel htmlFor="username" > Username </InputLabel>
                                 <Input id="username" type="text" />
                             </FormControl>
+                            <br/><br/>
                             <FormControl required>
-                                <InputLabel htmlFor="passward" >Passward</InputLabel>
+                                <InputLabel htmlFor="passward" > Passward </InputLabel>
                                 <Input id="passward" type="passward" />
                             </FormControl>
+                            <br/><br/>
+                            <Button variant="contained" color="primary">LOGIN</Button>
                     </TabContainer>
                 </Modal>
 
