@@ -53,7 +53,7 @@ class Header extends Component {
             lastnameRequired:"dispNone",
             eamil:"",
             eamilRequired:"dispNone",
-            registerPassward:"",
+            registerpassward:"",
             registerPasswardRequired:"dispNone",
             contact:"",
             ContactRequired:"dispNone"
@@ -76,7 +76,7 @@ class Header extends Component {
             eamilRequired:"dispNone",
             eamil:"",
             registerPasswardRequired:"dispNone",
-            registerPassward:"",
+            registerpassward:"",
             ContactRequired:"dispNone",
             contact:"" });
     }
@@ -99,7 +99,7 @@ class Header extends Component {
         this.state.firstname === "" ? this.setState({firstnameRequired:"dispBlock"}) : this.setState({firstnameRequired:"dispNone"});
         this.state.lastname === "" ? this.setState({lastnameRequired:"dispBlock"}) : this.setState({lastnameRequired: "dispNone"});
         this.state.eamil === "" ? this.setState({eamilRequired:"dispBlock"}) : this.setState({eamilRequired:"dispNone"});
-        this.state.registerPassward === "" ? this.setState({registerPasswardRequired:"dispBlock"}) : this.setState({registerPasswardRequired: "dispNone"});
+        this.state.registerpassward === "" ? this.setState({registerPasswardRequired:"dispBlock"}) : this.setState({registerPasswardRequired: "dispNone"});
         this.state.contact === "" ? this.setState({ContactRequired:"dispBlock"}) : this.setState({ContactRequired:"dispNone"});
     }
 
@@ -125,7 +125,7 @@ class Header extends Component {
     }
 
     inputRegisterPasswardChangeHandler = (e) =>{
-        this.setState({registerPassward: e.target.value});
+        this.setState({registerpassward: e.target.value});
     }
 
     inputContactChangeHandler =(e) =>{
@@ -146,7 +146,7 @@ class Header extends Component {
                         <Tab label="Login"/>
                         <Tab label="Register"/>
                     </Tabs>
-                    {this.state.value == 0 &&
+                    {this.state.value === 0 &&
                     <TabContainer >
                             <FormControl required>
                                 <InputLabel htmlFor="username" > Username </InputLabel>
@@ -155,14 +155,14 @@ class Header extends Component {
                             </FormControl>
                             <br/><br/>
                             <FormControl required>
-                                <InputLabel htmlFor="passward" > Passward </InputLabel>
+                                <InputLabel htmlFor="loginpassward" > Passward </InputLabel>
                                 <Input id="loginpassward" type="passward" passward={this.state.loginPassward} onChange={this.inputLoginPasswardChangeHandler} />
                                 <FormHelperText className={this.state.loginpasswardRequired}><span className="red">required</span></FormHelperText>
                             </FormControl>
                             <br/><br/>
                             <Button variant="contained" color="primary" onClick={this.loginClickHandler}>LOGIN</Button>
                     </TabContainer>}
-                    {this.state.value == 1 &&
+                    {this.state.value === 1 &&
                     <TabContainer >
                             <FormControl required>
                                 <InputLabel htmlFor="firstname" > Firstname </InputLabel>
@@ -183,8 +183,8 @@ class Header extends Component {
                             </FormControl>
                             <br/><br/>
                             <FormControl required>
-                                <InputLabel htmlFor="passward" > Passward </InputLabel>
-                                <Input id="registerpassward" type="passward" registerPassward={this.state.registerPassward} onChange={this.inputRegisterPasswardChangeHandler} />
+                                <InputLabel htmlFor="registerpassward" > Passward </InputLabel>
+                                <Input id="registerpassward" type="passward" registerpassward={this.state.registerpassward} onChange={this.inputRegisterPasswardChangeHandler} />
                                 <FormHelperText className={this.state.registerPasswardRequired}><span className="red">required</span></FormHelperText>
                             </FormControl>
                             <br/><br/>
